@@ -1,4 +1,4 @@
-# 🎓 TubeStudy AI - Supercharge Your Learning
+# 🎓 TubeNotes AI - Supercharge Your Learning
 
 Welcome to your new portfolio project! This repository transforms any educational YouTube video into a structured AI-powered study guide.
 
