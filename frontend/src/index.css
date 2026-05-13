@@ -1,0 +1,102 @@
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --bg-dark: #0f0f0f; /* Actual YouTube Dark Bg */
+  --card-bg: #272727; /* Actual YouTube Dark Secondary */
+  --border-color: #3f3f3f;
+  --accent-primary: #ff0000; /* YouTube Classic Red */
+  --accent-secondary: #ff4d4d;
+  --text-main: #ffffff;
+  --text-muted: #aaaaaa;
+  --glow: none;
+  
+  color-scheme: dark;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 1.05rem; /* Increased from default */
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* Lock body so only inner panels can scroll */
+  background-color: var(--bg-dark);
+}
+
+h1 { font-size: 2.5rem; font-weight: 700; }
+h2 { font-size: 1.8rem; font-weight: 600; }
+h3 { font-size: 1.4rem; font-weight: 600; }
+
+button {
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  padding: 0.75em 1.5em;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--card-bg);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #3f3f3f;
+  border-color: #3f3f3f;
+  box-shadow: none;
+}
+
+input {
+  background: #121212;
+  border: 1px solid var(--border-color);
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 40px 0 0 40px; /* Left side of search pill */
+  outline: none;
+  font-size: 1.1rem;
+}
+
+input:focus {
+  border-color: #1c62b9; /* YT focus blue */
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #272a36;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f4458;
+}
+
+.glass-panel {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: none; /* YT uses no border for main description box */
+  box-shadow: none;
+}
+
+.grad-text {
+  color: #ffffff;
+  font-weight: bold;
+}

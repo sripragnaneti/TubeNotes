@@ -1,0 +1,274 @@
+.app-container {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  height: 56px;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.search-container {
+  display: flex;
+  flex: 0 1 700px;
+  margin: 0 auto;
+}
+
+.search-container input {
+  flex-grow: 1;
+  border-right: none;
+}
+
+.btn-primary {
+  background: #222222;
+  border: 1px solid var(--border-color);
+  border-radius: 0 40px 40px 0;
+  padding: 0 1.5rem;
+  color: white;
+  font-weight: 400;
+}
+
+.btn-primary:hover {
+  background: #303030;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 400px;
+  gap: 1.5rem;
+  padding: 0 1.5rem 1rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* Left side */
+.dashboard-grid > div:first-child {
+  height: auto;
+}
+
+/* Right side (widgets column) */
+.dashboard-grid > div:last-child {
+  height: auto;
+}
+
+.timeline {
+  list-style: none;
+  max-height: 300px; /* Cap tall chapter lists so widgets fit */
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.card {
+  padding: 1rem;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 75%; /* 4:3 aspect ratio to fit the course video */
+  height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.timeline {
+  list-style: none;
+  padding-right: 0.5rem;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.timeline-item:hover {
+  background: #272727;
+}
+
+.timestamp {
+  color: var(--accent-secondary);
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.chapter-content h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.chapter-content p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Flashcards Styles */
+.flashcard-container {
+  perspective: 1000px;
+  height: 250px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flashcard-container.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid var(--border-color);
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(145deg, rgba(124, 58, 237, 0.1), rgba(255,255,255,0.01));
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.circle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: rgba(255,255,255,0.05);
+}
+
+/* Quiz Styling */
+.quiz-option {
+  width: 100%;
+  text-align: left;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.quiz-option:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateX(4px);
+}
+
+.quiz-option.correct {
+  background: rgba(45, 212, 191, 0.15);
+  border-color: #2dd4bf;
+}
+
+.quiz-option.wrong {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
+}
+
+.explanation {
+  padding: 1rem;
+  background: rgba(45, 212, 191, 0.05);
+  border-left: 3px solid var(--accent-secondary);
+  border-radius: 4px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(124, 58, 237, 0.1);
+  border-top-color: var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
